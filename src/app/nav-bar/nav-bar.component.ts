@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  pageTitle: string = "Hello";
+  pageTitle: string = "Prevoo Order Tool";
 
   constructor() { }
 

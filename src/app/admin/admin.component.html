@@ -1,0 +1,272 @@
+<div class="admin-total"> 
+    <md-card class="example-card">
+        <md-card-header>
+          <md-card-title><h3>Administratie</h3></md-card-title>
+        </md-card-header>
+        <md-card-content>
+<md-tab-group class="demo-tab-group">
+    <md-tab label="Product">
+      <div class="demo-tab-content">
+        <div class="example-container mat-elevation-z8">
+          <br>  
+            <div class="row">
+                <div class="col-md-10">
+                    <form class="example-form">
+                        <md-form-field class="example-full-width">
+                          <input mdInput placeholder="Voeg een product toe!" value="Product">
+                        </md-form-field>
+                      </form>
+              
+                </div>
+              
+                <div class="col-md-2"> <button type="button" class="btn btn-success float-right">Voeg product toe!</button></div>
+              
+              </div>
+           
+          <md-table #table [dataSource]="dataSource">
+        
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+        
+            <!-- Position Column -->
+            <ng-container mdColumnDef="position">
+              <md-header-cell *mdHeaderCellDef> No. </md-header-cell>
+              <md-cell *mdCellDef="let element"> {{element.position}} </md-cell>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container mdColumnDef="name">
+              <md-header-cell *mdHeaderCellDef> Name </md-header-cell>
+              <md-cell *mdCellDef="let element"> {{element.name}} </md-cell>
+            </ng-container>
+
+            
+        
+           
+        
+            <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+            <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+          </md-table>
+        </div>
+      </div>
+    </md-tab>
+    <md-tab label="Materiaal">
+      <div class="demo-tab-content">
+        <div class="example-container mat-elevation-z8">
+
+            <br>  
+            <div class="row">
+                <div class="col-md-10">
+                    <form class="example-form">
+                        <md-form-field class="example-full-width">
+                          <input mdInput placeholder="Voeg een materiaaltype toe!" value="Materiaal">
+                        </md-form-field>
+                      </form>
+              
+                </div>
+              
+                <div class="col-md-2"> <button type="button" class="btn btn-success float-right">Voeg materiaaltype toe!</button></div>
+              
+              </div>
+          <md-table #table [dataSource]="dataSource">
+        
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+        
+            <!-- Position Column -->
+            <ng-container mdColumnDef="position">
+              <md-header-cell *mdHeaderCellDef> No. </md-header-cell>
+              <md-cell *mdCellDef="let element"> {{element.position}} </md-cell>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container mdColumnDef="name">
+              <md-header-cell *mdHeaderCellDef> Name </md-header-cell>
+              <md-cell *mdCellDef="let element"> {{element.name}} </md-cell>
+            </ng-container>
+        
+           
+        
+            <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+            <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+          </md-table>
+        </div>
+      </div>
+    </md-tab>
+    <md-tab label="Dikte">
+      <div class="demo-tab-content">
+          <div class="example-container mat-elevation-z8">
+              
+          <br>  
+          <div class="row">
+              <div class="col-md-10">
+                  <form class="example-form">
+                      <md-form-field class="example-full-width">
+                        <input mdInput placeholder="Voeg een dikte toe!" value="Dikte">
+                      </md-form-field>
+                    </form>
+            
+              </div>
+            
+              <div class="col-md-2"> <button type="button" class="btn btn-success float-right">Voeg een dikte toe!</button></div>
+            
+            </div>
+          <md-table #table [dataSource]="dataSource">
+        
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+        
+            <!-- Position Column -->
+            <ng-container mdColumnDef="position">
+              <md-header-cell *mdHeaderCellDef> No. </md-header-cell>
+              <md-cell *mdCellDef="let element"> {{element.position}} </md-cell>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container mdColumnDef="name">
+              <md-header-cell *mdHeaderCellDef> Name </md-header-cell>
+              <md-cell *mdCellDef="let element"> {{element.name}} </md-cell>
+            </ng-container>
+        
+           
+        
+            <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+            <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+          </md-table>
+        </div>
+      </div>
+    </md-tab>
+    <md-tab label="Opties">
+      <div class="demo-tab-content">
+          <div class="example-container mat-elevation-z8">
+              
+        <br>  
+          <div class="row">
+              <div class="col-md-10">
+                  <form class="example-form">
+                      <md-form-field class="example-full-width">
+                        <input mdInput placeholder="Voeg extra opties toe!" value="Opties">
+                      </md-form-field>
+                    </form>
+            
+              </div>
+            
+              <div class="col-md-2"> <button type="button" class="btn btn-success float-right">Voeg optie toe!</button></div>
+            
+            </div>
+          <md-table #table [dataSource]="dataSource">
+        
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+        
+            <!-- Position Column -->
+            <ng-container mdColumnDef="position">
+              <md-header-cell *mdHeaderCellDef> No. </md-header-cell>
+              <md-cell *mdCellDef="let element"> {{element.position}} </md-cell>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container mdColumnDef="name">
+              <md-header-cell *mdHeaderCellDef> Name </md-header-cell>
+              <md-cell *mdCellDef="let element"> {{element.name}} </md-cell>
+            </ng-container>
+        
+           
+        
+            <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+            <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+          </md-table>
+        </div>
+      </div>
+    </md-tab>
+    <md-tab label="Kleur">
+      <div class="demo-tab-content">
+          <div class="example-container mat-elevation-z8">
+              
+        <br>  
+          <div class="row">
+              <div class="col-md-10">
+                  <form class="example-form">
+                      <md-form-field class="example-full-width">
+                        <input mdInput placeholder="Voeg een kleur toe!" value="Kleur">
+                      </md-form-field>
+                    </form>
+            
+              </div>
+            
+              <div class="col-md-2"> <button type="button" class="btn btn-success float-right">Voeg kleur toe!</button></div>
+            
+            </div>
+          <md-table #table [dataSource]="dataSource">
+        
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+        
+            <!-- Position Column -->
+            <ng-container mdColumnDef="position">
+              <md-header-cell *mdHeaderCellDef> No. </md-header-cell>
+              <md-cell *mdCellDef="let element"> {{element.position}} </md-cell>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container mdColumnDef="name">
+              <md-header-cell *mdHeaderCellDef> Name </md-header-cell>
+              <md-cell *mdCellDef="let element"> {{element.name}} </md-cell>
+            </ng-container>
+        
+           
+        
+            <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+            <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+          </md-table>
+        </div>
+      </div>
+    </md-tab>
+    <md-tab label="Formaat">
+      <div class="demo-tab-content">
+          <div class="example-container mat-elevation-z8">
+              
+        <br>  
+          <div class="row">
+              <div class="col-md-10">
+                  <form class="example-form">
+                      <md-form-field class="example-full-width">
+                        <input mdInput placeholder="Voeg een formaat toe!" value="Formaat">
+                      </md-form-field>
+                    </form>
+            
+              </div>
+            
+              <div class="col-md-2"> <button type="button" class="btn btn-success float-right">Voeg formaat toe!</button></div>
+            
+            </div>
+          <md-table #table [dataSource]="dataSource">
+        
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+        
+            <!-- Position Column -->
+            <ng-container mdColumnDef="position">
+              <md-header-cell *mdHeaderCellDef> No. </md-header-cell>
+              <md-cell *mdCellDef="let element"> {{element.position}} </md-cell>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container mdColumnDef="name">
+              <md-header-cell *mdHeaderCellDef> Name </md-header-cell>
+              <md-cell *mdCellDef="let element"> {{element.name}} </md-cell>
+            </ng-container>
+        
+           
+        
+            <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+            <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+          </md-table>
+        </div>
+      </div>
+    </md-tab>
+  </md-tab-group>
+</md-card-content>
+
+</md-card>
+</div>

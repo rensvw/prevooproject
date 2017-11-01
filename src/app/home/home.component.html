@@ -1,12 +1,139 @@
-<div class="card ">
-  <h3 class="card-header">
-    {{pageTitle}}
-  </h3>
-  <div class="card-block">
+<md-card class="example-card">
+    <md-card-header>
+      <md-card-title><h3>Orders</h3></md-card-title>
+    </md-card-header>
+    <md-card-content>
     
-Email: {{email}}<br>
-Name: {{fullName}}
-  </div>
+        <div class="row">
+            <table class="table table-bordered table-responsive thead-inverse table-hover ">
+              <tr>
+                <th>Product</th>
+                <th>Dikte</th>
+                <th>Formaat</th>
+                <th>Materiaal</th>
+                <th>Opties</th>
+                <th>Kleur</th>
+                <th>Datum Klaar</th>
+              </tr>
+              <tr>
+                <td>
+                  <ng2-dropdown>
+                    <ng2-dropdown-button>
+                      Product
+                    </ng2-dropdown-button>
+                    <ng2-dropdown-menu>
+                      <ng2-menu-item>
+                        Ster
+                      </ng2-menu-item>
+                      <ng2-menu-item>
+                          Bol
+                        </ng2-menu-item>
+                    </ng2-dropdown-menu>
+                  </ng2-dropdown>
+                </td>
+                <td>
+                  <ng2-dropdown>
+                    <ng2-dropdown-button>
+                      Dikte
+                    </ng2-dropdown-button>
+                    <ng2-dropdown-menu>
+                      <ng2-menu-item>
+                        10mm
+                      </ng2-menu-item>
+                      <ng2-menu-item>
+                          20mm
+                        </ng2-menu-item>
+                        <ng2-menu-item>
+                            30mm
+                          </ng2-menu-item>
+                    </ng2-dropdown-menu>
+                  </ng2-dropdown>
+                </td>
+                <td>
+                  <ng2-dropdown>
+                    <ng2-dropdown-button>
+                      Formaat
+                    </ng2-dropdown-button>
+                    <ng2-dropdown-menu>
+                      <ng2-menu-item>
+                        Klein
+                      </ng2-menu-item>
+                      <ng2-menu-item>
+                          Middel
+                        </ng2-menu-item>
+                      <ng2-menu-item>
+                          Groot
+                        </ng2-menu-item>
+                    </ng2-dropdown-menu>
+                  </ng2-dropdown>
+                </td>
+                <td>
+                  <ng2-dropdown>
+                    <ng2-dropdown-button>
+                      Materiaal
+                    </ng2-dropdown-button>
+                    <ng2-dropdown-menu>
+                      <ng2-menu-item>
+                        MDF
+                      </ng2-menu-item>
+                      <ng2-menu-item>
+                          Hout
+                        </ng2-menu-item>
+                    </ng2-dropdown-menu>
+                  </ng2-dropdown>
+                </td>
+                <td>
+                  <ss-multiselect-dropdown [options]="myOptions" [texts]="myTexts" [settings]="mySettings" [(ngModel)]="optionsModel"></ss-multiselect-dropdown>
+                </td>
+                <td>
+                  <ng2-dropdown>
+                    <ng2-dropdown-button>
+                      Kleur
+                    </ng2-dropdown-button>
+                    <ng2-dropdown-menu>
+                      <ng2-menu-item>
+                        Groen
+                      </ng2-menu-item>
+                      <ng2-menu-item>
+                          Rood
+                        </ng2-menu-item>
+                        <ng2-menu-item>
+                            Zwart
+                          </ng2-menu-item>
+                    </ng2-dropdown-menu>
+                  </ng2-dropdown>
+                </td>
+                <td>
+                  <ng2-datepicker [options]="dateOptions" [(ngModel)]="date"></ng2-datepicker>
+                </td>
+              </tr>
+            </table>
+            </div>
+            <div class="row">
+              <div class="col-md-10">
+                <input *ngIf="config.filtering" placeholder="Filter op alle kolommen" [ngTableFiltering]="config.filtering" class="form-control"
+                  (tableChanged)="onChangeTable(config)" />
+            
+              </div>
+            
+              <div class="col-md-2"> <button type="button" class="btn btn-success float-right">Voeg order toe!</button></div>
+            
+            </div>
+            <br>
+            
+            <ng-table [config]="config" (tableChanged)="onChangeTable(config)" (cellClicked)="onCellClick($event)" [rows]="rows" [columns]="columns">
+            </ng-table>
+            <pagination *ngIf="config.paging" class="pagination-sm" [(ngModel)]="page" [totalItems]="length" [itemsPerPage]="itemsPerPage"
+              [maxSize]="maxSize" [boundaryLinks]="true" [rotate]="false" (pageChanged)="onChangeTable(config, $event)" (numPages)="numPages = $event">
+            </pagination> 
 
-</div>
+            <form class="example-form">
+                <md-form-field class="example-full-width">
+                  <input mdInput placeholder="Zoek door de tabel!" value="zoek..." (keydown.enter)="onSearch(search.value)" style="max-width:100%">
+                </md-form-field>
+              </form>
+            <ng2-smart-table [settings]="settings" [source]="source"></ng2-smart-table>
 
+    </md-card-content>
+   
+  </md-card>
